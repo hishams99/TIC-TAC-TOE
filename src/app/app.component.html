@@ -1,0 +1,15 @@
+<h1> Tic Tac Toe</h1>
+
+
+
+
+<div *ngIf="isHumanTurn" class="medium">Your Turn</div>
+<div *ngIf="isHumanWinner" class="message">You Won!</div>
+<div *ngIf="isComputerWinner" class="message">AI Won!</div>
+<div class="box">
+    <mat-grid-list cols="3" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let tile of tiles; let i = index" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color" (click)="setMove(i)">
+            {{tile.text}}
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
